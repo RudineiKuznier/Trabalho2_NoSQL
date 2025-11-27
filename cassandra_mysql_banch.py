@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""
-TPC-H Benchmark - MySQL vs Cassandra (VERSÃO FINAL OTIMIZADA)
-- Q1: usa lineitem_by_rf_ls (partição por returnflag+linestatus, clustering por shipdate)
-- Q3: usa orders_by_cust (partição por c_custkey)
-- Bulk load: execute_concurrent_with_args + retry/backoff
-- Conversões de cassandra.util.Date tratadas com to_datetime()
-"""
-
 from cassandra.cluster import Cluster, ExecutionProfile, EXEC_PROFILE_DEFAULT
 from cassandra.concurrent import execute_concurrent_with_args
 from cassandra import WriteTimeout, Unavailable, OperationTimedOut
